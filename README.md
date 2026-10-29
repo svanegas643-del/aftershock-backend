@@ -105,4 +105,4 @@ Para registrar una ayuda, la solicitud debe estar en `En proceso` o `Atendida`; 
 
 ## Colección de Postman
 
-[pegar aquí el enlace de la colección]
+https://github.com/svanegas643-del/aftershock-backend/blob/main/postman/Aftershock%20API.postman_collection.json
