@@ -1,0 +1,284 @@
+{
+  "info": {
+    "_postman_id": "b5c30b99-0a28-4118-9838-859d65319325",
+    "name": "Aftershock API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59311891",
+    "_collection_link": "https://go.postman.co/collection/59311891-b5c30b99-0a28-4118-9838-859d65319325?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Crear persona",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "   {\r\n     \"nombre\": \"Ana Pérez (ficticia)\",\r\n     \"documento\": \"1234567891\",\r\n     \"telefono\": \"3125550000\",\r\n     \"ubicacion\": \"Popayán, Cauca\"\r\n   }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/personas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "personas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear solicitud",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"personaId\": \"P-001\",\r\n  \"necesidades\": [\"Alimentación\", \"Agua\"],\r\n  \"descripcion\": \"Familia de 4 personas sin vivienda\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/solicitudes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "solicitudes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultar solicitud",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/solicitudes/CO-000001",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "solicitudes",
+            "CO-000001"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar estado",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"estado\": \"En revisión\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/solicitudes/CO-000001/estado",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "solicitudes",
+            "CO-000001",
+            "estado"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar personas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/personas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "personas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error a propósito",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"personaId\": \"P-001\",\r\n  \"necesidades\": [],\r\n  \"descripcion\": \"Prueba de error\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/solicitudes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "solicitudes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar campañas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/campanas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "campanas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Campañas verificadas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/campanas?estado=Verificada",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "campanas"
+          ],
+          "query": [
+            {
+              "key": "estado",
+              "value": "Verificada"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear donación",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"campanaId\": \"C-001\",\r\n  \"monto\": 50000,\r\n  \"metodoPago\": \"PSE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/donaciones",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "donaciones"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear ayuda",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"solicitudId\": \"CO-000001\",\r\n  \"tipo\": \"Alimentación\",\r\n  \"cantidad\": 10\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/v1/ayudas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "ayudas"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
