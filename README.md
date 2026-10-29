@@ -4,7 +4,7 @@ API REST de apoyo humanitario después de terremotos en Colombia. Taller 3 de Co
 
 Hecha con **Node.js + TypeScript + Express**. No usa base de datos: los datos viven en arreglos en memoria y **se borran cada vez que se reinicia el servidor**.
 
-**Integrantes:** [Diaz Zambarno Nicol Estefany], [Garcia Marchena Maira Alejandra], [Vanegas Jimenez Sarha Daniela]
+**Integrantes:** Diaz Zambarno Nicol Estefany, Garcia Marchena Maira Alejandra, Vanegas Jimenez Sarha Daniela
 
 ## Requisitos
 
